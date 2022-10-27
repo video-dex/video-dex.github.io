@@ -32,11 +32,11 @@
   <meta property="og:type" content="video.other" />
   <meta property="og:title" content="VideoDex: Learning Dexterity from Internet Videos" />
   <meta property="og:description" content="VideoDex: Learning Dexterity from Internet Videos" />
-  <meta property="og:url" content="https://video-dex.github.io/" />
-  <meta property="og:image" content="./resources/teaser.png" />
-  <meta property="og:image:secure" content="./resources/teaser.png" />
-  <meta property="og:video" content="./resources/compressed.mp4" />
-  <meta property="og:video:secure" content="./resources/compressed.mp4" />
+  <meta property="og:url" content="http://video-dex.github.io/" />
+  <meta property="og:image" content="http://video-dex.github.io/resources/teaser.png" />
+  <meta property="og:image:secure" content="http://video-dex.github.io/resources/teaser.png" />
+  <meta property="og:video" content="http://video-dex.github.io/resources/compressed.mp4" />
+  <meta property="og:video:secure" content="http://video-dex.github.io/resources/compressed.mp4" />
 
   <meta property="article:publisher" content="/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -48,8 +48,8 @@
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <meta name="twitter:card" content="player" />
-  <meta name="twitter:image" content="./resources/teaser.png" />
-  <meta name="twitter:player" content="./resources/teaser.png" />
+  <meta name="twitter:image" content="http://video-dex.github.io/resources/teaser.png" />
+  <meta name="twitter:player" content="http://video-dex.github.io/resources/teaser.png" />
   <meta name="twitter:player:width" content="640" />
   <meta name="twitter:player:height" content="360" />
 
@@ -135,18 +135,87 @@
           <p style = "font-size: 20px">
 To build general robotic agents that can operate in many environments, it is imperative for the robot to collect experience in the real world.  However, this is often not feasible due to safety, time and hardware restrictions.  We thus propose leveraging the next best thing as real world experience: internet videos of humans using their hands.  Visual priors, such as visual features, are often learned from videos, but we believe that more information from videos can be utilized as a stronger prior.  We build a learning algorithm, VideoDex, that leverages visual, action and physical priors from human video data to guide robot behavior.  These action and physical priors in the neural network dictate the typical human behavior for a particular robot task.   We test our approach on a robot arm and dexterous hand based system and show strong results on many different manipulation tasks, outperforming various state-of-the-art methods.
           </p>
+
+          <div class="container">
+            <div class = "row"></div>
+              <div class="col">
+                  <img src="./resources/teaser.png" alt="Method Figure"  width="100%" style=>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/ Abstract. -->
+  <br>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">1) Learn Priors from Internet Video:</h3>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted src="./resources/internet.mp4" width="100%"
+                           style="border-radius:10px; display: block;
+                           margin-left: auto;
+                           margin-right: auto;"></video>
+                  <br>
+                  <div class="content has-text-justified">
+                    <p style = "font-size: 20px; centered">
+                  To use internet videos as pseudo-robot experience, we re-target the 3D MANO human hand detections to 16 Degree of Freedom Robotic Allegro Hand and the wrist from the moving camera to the xArm6 emobodiment.  
+                  The data is used as priors to pretrain the policies.
+                      </p>
+                  </div>
+                </div>
+              </div>                
+            </td>
+          </tr>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">2) Collect a Few Teleoperated Demonstrations:</h3>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted src="./resources/teleoperation.mp4" width="100%"
+                           style="border-radius:10px; display: block;
+                           margin-left: auto;
+                           margin-right: auto;"></video>
+                  <br>
+                  <div class="content has-text-justified">
+                    <p style = "font-size: 20px; centered">
+                      We quickly collect a few teleoperated demonstrations that to help bridge the gap between internet data and the robot embodiment.
+                      </p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+            </td>
+          </tr>
+        </div> 
+      </div>
+    </div>
+  </section>
+
 
   <!-- Paper video. -->
   <!--/ Paper video. -->
-  <h2 class="title is-2" style="text-align: center;">Individual Results</h2>
+  <h2 class="title is-2" style="text-align: center;">3) Autonomous Results:</h2>
   <br>
 
-  <div class="row no-gutters">
+  <div class="container">
     <div class="row no-gutters">
 
       <div class="col-6" style= " padding-left: 10px; padding-right: 0px;">
@@ -213,88 +282,21 @@ To build general robotic agents that can operate in many environments, it is imp
       <div class="col-6" style= " padding-left: 10px; padding-right: 0px;">
           <video playsinline autoplay loop muted src="./resources/9.mp4" width="100%"
                  style="border-radius:10px; border:1px solid black"></video>
-      </div>
-
+      </div>   
     </div>
-
-
-  <!-- <div class="row no-gutters">
-    <div class="col-4">
-        <video playsinline autoplay loop muted src="./resources/4.mp4" width="100%"
-               style="border-radius:10px; border:1px solid black"></video>
+    <div class="content has-text-justified">
+      <p style = "font-size: 20px; centered">
+        <!-- We show strong results on a variety of tasks. -->
+        </p>
     </div>
-    <div class="col-4">
-        <video playsinline autoplay loop muted src="./resources/5.mp4" width="100%"
-               style="border-radius:10px; border:1px solid black"></video>
-    </div>
-</div>
-<div class="row no-gutters">
-  <div class="col-4">
-      <video playsinline autoplay loop muted src="./resources/6.mp4" width="100%"
-             style="border-radius:10px; border:1px solid black"></video>
-  </div>
-  <div class="col-4">
-      <video playsinline autoplay loop muted src="./resources/7.mp4" width="100%"
-             style="border-radius:10px; border:1px solid black"></video>
-  </div>
-</div>
-<div class="row no-gutters">
-  <div class="col-5">
-      <video playsinline autoplay loop muted src="./resources/8.mp4" width="100%"
-             style="border-radius:10px; border:1px solid black"></video>
-  </div>
-  <div class="col-5">
-      <video playsinline autoplay loop muted src="./resources/9.mp4" width="100%"
-             style="border-radius:10px; border:1px solid black"></video>
-  </div>
-</div> -->
-
-
-
-
-
-
-    <!-- <div class="row no-gutters">
-      <div class="col-3">
-          <video playsinline autoplay loop muted src="./resources/3.mp4" width="100%"
-                 style="border-radius:10px; border:1px solid black"></video>
-      </div>
-      <div class="col-3">
-          <video playsinline autoplay loop muted src="./resources/4.mp4" width="100%"
-                 style="border-radius:10px; border:1px solid black"></video>
-      </div>
-      <div class="col-3">
-          <video playsinline autoplay loop muted src="./resources/5.mp4" width="100%"
-                 style="border-radius:10px; border:1px solid black"></video>
-      </div>
-      <div class="col-3">
-          <video playsinline autoplay loop muted src="./resources/6.mp4" width="100%"
-                 style="border-radius:10px; border:1px solid black"></video>
-      </div>
-    </div>
-  </div>
-  <br><br>
-  <h2 class="title is-2" style="text-align: center;">Train Object Demos</h2>
-  <br>
-  <div class="row no-gutters">
-    <div class="row no-gutters">
-        <div class="col-4">
-            <video playsinline autoplay loop muted src="./resources/7.mp4" width="100%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col-4">
-            <video playsinline autoplay loop muted src="./resources/8.mp4" width="100%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col-4">
-            <video playsinline autoplay loop muted src="./resources/9.mp4" width= "100%"
-                   style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div> -->
   </div>
 </div>
 </section>
 
+
+<section class="section">
+  
+</section>
 
 
 
